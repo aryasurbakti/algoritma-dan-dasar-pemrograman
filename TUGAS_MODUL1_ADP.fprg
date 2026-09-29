@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<flowgorithm fileversion="2.18">
+  <attributes>
+    <attribute name="name" value="Tugas Praktikum Modul I"/>
+    <attribute name="authors" value=""/>
+    <attribute name="about" value="Perhitungan Belanja Udin"/>
+    <attribute name="saved" value="2026-09-29 00:00:00"/>
+    <attribute name="created" value="2026-09-29 00:00:00"/>
+    <attribute name="language" value="id"/>
+    <attribute name="exporter" value=""/>
+    <attribute name="indent" value="4"/>
+  </attributes>
+
+  <function name="Main" type="None" variable="">
+    <parameters/>
+    <body>
+
+      <declare name="buku" type="Integer" array="False" size=""/>
+      <declare name="hargaBuku" type="Integer" array="False" size=""/>
+      <declare name="pulpen" type="Integer" array="False" size=""/>
+      <declare name="hargaPulpen" type="Integer" array="False" size=""/>
+      <declare name="flashdisk" type="Integer" array="False" size=""/>
+      <declare name="hargaFlashdisk" type="Integer" array="False" size=""/>
+      <declare name="uang" type="Integer" array="False" size=""/>
+
+      <declare name="totalBuku" type="Integer" array="False" size=""/>
+      <declare name="totalPulpen" type="Integer" array="False" size=""/>
+      <declare name="totalFlashdisk" type="Integer" array="False" size=""/>
+      <declare name="total" type="Integer" array="False" size=""/>
+      <declare name="diskon" type="Integer" array="False" size=""/>
+      <declare name="setelahDiskon" type="Integer" array="False" size=""/>
+      <declare name="ppn" type="Integer" array="False" size=""/>
+      <declare name="totalBayar" type="Integer" array="False" size=""/>
+      <declare name="kembalian" type="Integer" array="False" size=""/>
+
+      <output expression="&quot;=== PROGRAM BELANJA UDIN ===&quot;" newline="True"/>
+
+      <output expression="&quot;Masukkan jumlah buku:&quot;" newline="True"/>
+      <input variable="buku"/>
+
+      <output expression="&quot;Masukkan harga satu buku:&quot;" newline="True"/>
+      <input variable="hargaBuku"/>
+
+      <output expression="&quot;Masukkan jumlah pulpen:&quot;" newline="True"/>
+      <input variable="pulpen"/>
+
+      <output expression="&quot;Masukkan harga satu pulpen:&quot;" newline="True"/>
+      <input variable="hargaPulpen"/>
+
+      <output expression="&quot;Masukkan jumlah flashdisk:&quot;" newline="True"/>
+      <input variable="flashdisk"/>
+
+      <output expression="&quot;Masukkan harga satu flashdisk:&quot;" newline="True"/>
+      <input variable="hargaFlashdisk"/>
+
+      <output expression="&quot;Masukkan uang yang dibayarkan:&quot;" newline="True"/>
+      <input variable="uang"/>
+
+      <assign variable="totalBuku" expression="buku * hargaBuku"/>
+
+      <assign variable="totalPulpen" expression="pulpen * hargaPulpen"/>
+
+      <assign variable="totalFlashdisk" expression="flashdisk * hargaFlashdisk"/>
+
+      <assign variable="total" expression="totalBuku + totalPulpen + totalFlashdisk"/>
+
+      <assign variable="diskon" expression="total * 10 / 100"/>
+
+      <assign variable="setelahDiskon" expression="total - diskon"/>
+
+      <assign variable="ppn" expression="setelahDiskon * 11 / 100"/>
+
+      <assign variable="totalBayar" expression="setelahDiskon + ppn"/>
+
+      <assign variable="kembalian" expression="uang - totalBayar"/>
+
+      <output expression="&quot;&quot;" newline="True"/>
+      <output expression="&quot;=== HASIL PERHITUNGAN ===&quot;" newline="True"/>
+
+      <output expression="&quot;a. Total harga buku = Rp&quot; &amp; totalBuku" newline="True"/>
+      <output expression="&quot;b. Total harga pulpen = Rp&quot; &amp; totalPulpen" newline="True"/>
+      <output expression="&quot;c. Total harga flashdisk = Rp&quot; &amp; totalFlashdisk" newline="True"/>
+      <output expression="&quot;d. Total seluruh barang = Rp&quot; &amp; total" newline="True"/>
+      <output expression="&quot;e. Besarnya diskon 10% = Rp&quot; &amp; diskon" newline="True"/>
+      <output expression="&quot;f. Harga setelah diskon = Rp&quot; &amp; setelahDiskon" newline="True"/>
+      <output expression="&quot;g. Besarnya PPN 11% = Rp&quot; &amp; ppn" newline="True"/>
+      <output expression="&quot;h. Total pembayaran setelah pajak = Rp&quot; &amp; totalBayar" newline="True"/>
+      <output expression="&quot;i. Uang kembalian = Rp&quot; &amp; kembalian" newline="True"/>
+
+    </body>
+  </function>
+</flowgorithm>
